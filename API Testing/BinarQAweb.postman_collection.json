@@ -1,0 +1,575 @@
+{
+	"info": {
+		"_postman_id": "b56b5675-bb56-4510-9945-18d7db0c7a8b",
+		"name": "BinarQAweb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37202279"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": {\r\n    \"name\": \"Kate Austen\",\r\n    \"email\": \"kate@gmail.com\",\r\n    \"password\": \"laptop\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.url}}/users.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"users.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Session",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user\": {\r\n    \"email\": \"kate@gmail.com\",\r\n    \"password\": \"laptop\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.url}}/users/sign_in.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"users",
+						"sign_in.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MjMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzOTAzMTQsImV4cCI6MTcyNDU5OTkxNCwianRpIjoiNzhlOGQyMTgtMWFlYS00NTIwLTgxM2UtY2RhYTkxYjM4NDc0In0.s1kxT8_7VXBRL63B5C7RGbwZ8gJekrnajjGlchspWHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/categories.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"categories.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Categories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MjMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzOTAzMTQsImV4cCI6MTcyNDU5OTkxNCwianRpIjoiNzhlOGQyMTgtMWFlYS00NTIwLTgxM2UtY2RhYTkxYjM4NDc0In0.s1kxT8_7VXBRL63B5C7RGbwZ8gJekrnajjGlchspWHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/categories/5.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"categories",
+						"5.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Offer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MjMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzOTAzMTQsImV4cCI6MTcyNDU5OTkxNCwianRpIjoiNzhlOGQyMTgtMWFlYS00NTIwLTgxM2UtY2RhYTkxYjM4NDc0In0.s1kxT8_7VXBRL63B5C7RGbwZ8gJekrnajjGlchspWHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"offer\": {\r\n    \"price\": 80000,\r\n    \"to_id\": 1,\r\n    \"product_id\": 134901\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.url}}/offers.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"offers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Offers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MjMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzOTAzMTQsImV4cCI6MTcyNDU5OTkxNCwianRpIjoiNzhlOGQyMTgtMWFlYS00NTIwLTgxM2UtY2RhYTkxYjM4NDc0In0.s1kxT8_7VXBRL63B5C7RGbwZ8gJekrnajjGlchspWHE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Barer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzNTMxMzgsImV4cCI6MTcyNDU2MjczOCwianRpIjoiZmIzZjVmNGEtNmNlMi00MjczLTkzNjUtNzVkZTU5YmJjNjRhIn0._yczugmGak3HvbCETgklZYH4Q8B8iS7x1lpeC-yRqOk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/users/195723/offers.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"users",
+						"195723",
+						"offers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Offer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"offer\": {\r\n    \"status\": \"accepted\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.url}}/offers/107017.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"offers",
+						"107017.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product[name]",
+							"value": "\"Panadol\"",
+							"type": "text"
+						},
+						{
+							"key": "product[price]",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "product[description]",
+							"value": "\"obat sakit kepala\"",
+							"type": "text"
+						},
+						{
+							"key": "product[status]",
+							"value": "draft",
+							"type": "text"
+						},
+						{
+							"key": "product[category_id]",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "product[images][]",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.url}}/products.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"products.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/products.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"products.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/products/134901.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"products",
+						"134901.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTUiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzNjM4NjQsImV4cCI6MTcyNDU3MzQ2NCwianRpIjoiODE4NGUyMmItMjFhYS00YTIyLThkOTItN2JlNTQ4YWE3YjdkIn0.nW3MIvU8iUna5hm3YeAFCjAUcelVQ5IDZLLrEVFDB4A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product[name]",
+							"value": "dumin",
+							"type": "text"
+						},
+						{
+							"key": "product[price]",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "product[description]",
+							"value": "wow",
+							"type": "text"
+						},
+						{
+							"key": "product[status]",
+							"value": "published",
+							"type": "text"
+						},
+						{
+							"key": "product[category_id]",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "product[images][]",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "product[persisted_images][]",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.url}}/products/134904.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"products",
+						"134904.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/products/134901.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"products",
+						"134901.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{base.url}}/profiles.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"profiles.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTU3MTkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3MjMzODIwNzgsImV4cCI6MTcyNDU5MTY3OCwianRpIjoiNTE4MDg4NzQtZTc0NS00YWIyLThlZTEtZDE4MzllZWVkZjNlIn0.Xf1eld5E4liYbSKpHYKeMXdC7ZDKRyUP3P8Lf90WVSc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.url}}/profiles.json",
+					"host": [
+						"{{base.url}}"
+					],
+					"path": [
+						"profiles.json"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

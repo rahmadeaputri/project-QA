@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "2cf9f909-ee0a-4486-aba9-574a124a8eaf",
+		"name": "BinarQAMobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37202279"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "Juliet ",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "juliet@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "kisahini",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "081345678",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "jakarta",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/H P/Downloads/super_air_jet_logo.jpeg"
+						},
+						{
+							"key": "city ",
+							"value": "jakarta",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.mobile}}/auth/register",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"juliet@gmail.com\",\r\n  \"password\": \"kisahini\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.mobile}}/auth/login",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Fix Formula 44",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "obat batuk",
+							"type": "text"
+						},
+						{
+							"key": "base_price",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "category_ids",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "Jakarta",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/H P/Downloads/fix44.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base.mobile}}/seller/product",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/seller/product",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"seller",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/seller/product/126430",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"seller",
+						"product",
+						"126430"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete product by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/seller/product/126432",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"seller",
+						"product",
+						"126432"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/buyer/product?category_id=5&search=fix",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"product"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "5"
+						},
+						{
+							"key": "search",
+							"value": "fix"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer product by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/buyer/product/126431",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"product",
+						"126431"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create buyer order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 126430,\r\n  \"bid_price\": 7000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.mobile}}/buyer/order",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer order",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/buyer/order",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buyer order by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ecmascript",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base.mobile}}/buyer/order/65727",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"order",
+						"65727"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update buyer order by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "access_token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imp1bGlldEBnbWFpbC5jb20iLCJpYXQiOjE3MjM0MzQ2MDd9.5lYYCzTk1cgg35tSFEMT8r4uzDveipMFHUyGhv9tQ2U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bid_price\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base.mobile}}/buyer/order/65727",
+					"host": [
+						"{{base.mobile}}"
+					],
+					"path": [
+						"buyer",
+						"order",
+						"65727"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
